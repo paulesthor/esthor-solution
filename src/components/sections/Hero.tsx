@@ -156,7 +156,7 @@ export default function Hero() {
           >
             <div className="relative w-full rounded-[2rem] overflow-hidden shadow-2xl border border-encre/8 group">
               <img
-                src="/assets/paul.webp"
+                src={`${import.meta.env.BASE_URL}assets/paul.webp`}
                 alt="Paul Esthor — Artisan du Web"
                 className="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105"
               />

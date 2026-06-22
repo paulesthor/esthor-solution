@@ -4,7 +4,7 @@ import { Phone, Eye, EyeOff, Lock, MapPin } from 'lucide-react'
 
 // URL du bureau virtuel de démonstration
 // → En production : remplacer par l'URL deployée (ex: https://demo.esthor-solution.fr)
-const DEMO_URL = 'http://localhost:5174/?demo=true'
+const DEMO_URL = `${import.meta.env.BASE_URL}demo/?demo=true`
 
 export default function BacASable() {
   const ref = useRef(null)
