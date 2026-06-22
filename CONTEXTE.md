@@ -1,15 +1,18 @@
 # CONTEXTE — Esthor Solution (v2)
 
 > Lis ce fichier en début de session pour avoir le contexte complet sans analyser le code.
+> Mis à jour le 22 juin 2026.
 
 ---
 
 ## Qui / Quoi
 
-**Fondateur :** Paul Esthor — développeur indépendant, "Artisan du Web"
-**Zone cible :** Occitanie (Toulouse) + Nouvelle-Aquitaine (Niort, Limoges)
-**Positionnement :** Pas une agence, un artisan. Zéro jargon, accompagnement humain, disponible directement au 06 74 90 36 53.
-**Problème résolu :** La "SaaS fatigue" — Wix + Calendly + Sellsy = 80€/mois gaspillés + 5h/semaine perdues.
+**Fondateur :** Paul Esthor — développeur web indépendant, "Artisan du Web"
+**Basé à :** Niort (79000), Deux-Sèvres
+**Zones cibles :** Niort & Deux-Sèvres · Limoges & Haute-Vienne · France entière à distance
+**Tel :** 06 74 90 36 53 · **Email :** contact@esthor-solution.fr
+**Positionnement :** Pas une agence, un artisan. Zéro jargon, contact direct, disponible en fin de journée et week-end.
+**Problème résolu :** La "SaaS fatigue" — payer Wix + Calendly + un outil de facturation ≈ 80€/mois pour des outils qui ne se parlent pas + 5h/semaine perdues sur l'administratif.
 
 ---
 
@@ -17,43 +20,57 @@
 
 | Offre | Prix | Ce que c'est |
 |---|---|---|
-| **Présence** (site vitrine) | Dès 800 € paiement unique | Site 100% statique, SEO local, PageSpeed 95+, 10 jours ouvrés |
-| **Bureau Virtuel** (SaaS PME) | Dès 3 500 € setup + 89 €/mois | Site vitrine + tableau de bord (Agenda, Devis/Factures PDF, CRM, Dashboard CA) |
+| **Présence** (site vitrine) | Dès **800 €** paiement unique | Site 100% statique, SEO local, PageSpeed 95+, livré en 10 jours ouvrés, zéro abonnement |
+| **Bureau Virtuel** (SaaS PME) | Dès **3 500 €** setup + **89 €/mois** | Site vitrine + tableau de bord (Agenda, Devis/Factures PDF, CRM, Dashboard, espace client) |
+
+---
+
+## Clients réalisés (portfolio)
+
+| Client | Offre | Région | Statut |
+|---|---|---|---|
+| **Maxime — Emylas Animation** | Présence ~800€ | Rhône-Alpes | ✅ En ligne sur [emylas.fr](https://www.emylas.fr) |
+| **Mathilde Gesta** (tapissière) | Bureau Virtuel ~2 500€ | Région de Metz | 🔧 En construction (GitHub seulement) |
+| **Michèle — Moment d'Évasion** (massage) | Bureau Virtuel Premium ~4 500€ | Montamisé, Vienne (86), près de Poitiers | ✅ En ligne sur [GitHub Pages](https://paulesthor.github.io/moment/) |
 
 ---
 
 ## Stack technique
 
-- **Framework :** React 18 + TypeScript + Vite
-- **Style :** Tailwind CSS (config custom) + classes utilitaires manuelles dans `index.css`
-- **Animations :** Framer Motion — toutes les animations respectent `useReducedMotion`
+- **Framework :** React 19 + TypeScript + Vite 8
+- **Style :** Tailwind CSS 3 (config custom) + utilitaires CSS manuels dans `index.css`
+- **Animations :** Framer Motion — toutes respectent `useReducedMotion`
 - **Icônes :** Lucide React
-- **Polices :** Plus Jakarta Sans auto-hébergée (`/public/fonts/*.ttf`) — RGPD compliant, pas de CDN Google
+- **Polices :** Plus Jakarta Sans auto-hébergée (`/public/fonts/*.ttf`) — RGPD compliant
+- **Formulaire RDV :** Web3Forms (clé : `1c9141a9-d7d5-4717-ab58-483833f0fd2e`)
+- **Déploiement :** GitHub Pages via GitHub Actions (auto à chaque push sur `main`)
+- **Repo :** https://github.com/paulesthor/esthor-solution
+- **URL actuelle :** https://paulesthor.github.io/esthor-solution/ (temporaire, en attente du domaine)
 
 ---
 
 ## Design System
 
-### Couleurs (tailwind.config.js)
+### Couleurs (`tailwind.config.js`)
 | Token | Hex | Usage |
 |---|---|---|
 | `fond` | `#FDFBF7` | Fond général (blanc papier chaud) |
 | `encre` | `#18181B` | Texte, éléments sombres |
 | `vert` | `#10B981` | Accent, CTA principal, validation |
 
-### Utilitaires CSS (index.css)
-- `.glass` — glassmorphism blanc (bg white/75, backdrop-blur-20, border white/95)
+### Utilitaires CSS (`index.css`)
+- `.glass` — glassmorphism blanc (bg white/75, backdrop-blur-20, border white/95, shadow)
 - `.glass-dark` — glassmorphism sombre
 - `.section-padding` — `px-6 py-24 md:px-12 lg:px-24`
 - `.container-site` — `max-w-6xl mx-auto w-full`
-- `.logo-block-top/mid/bot` — animation SVG logo (slide 5s)
+- `.logo-block-top/mid/bot` — animation SVG logo (slide 5s, respecte `prefers-reduced-motion`)
 - `.logo-pillar` — animation SVG logo (fill pulse 5s)
 - `.animate-blob` — blob flou ambiance hero (8s)
 
-### Animations Tailwind
-- `animate-float-slow` — float 6s (cartes hero gauche)
-- `animate-float-medium` — float 4.5s delay 0.5s (carte centre)
-- `animate-float-fast` — float 3.8s delay 1s (carte droite)
+### Animations Tailwind (`tailwind.config.js`)
+- `animate-float-slow` — float 6s (carte 1)
+- `animate-float-medium` — float 4.5s delay 0.5s (carte 2)
+- `animate-float-fast` — float 3.8s delay 1s (carte 3)
 
 ---
 
@@ -61,115 +78,107 @@
 
 ```
 Nav → Hero → Probleme → Bifurcation → CommentCaMarche
-    → Portfolio → BacASable → Manifeste → FAQ → CTAFinal → Footer
+    → Portfolio → BacASable (fusionné avec Manifeste) → FAQ → CTAFinal → Footer
 ```
 
-### Nav (`Nav.tsx`) ✅ Mis à jour
-- **Pilule flottante glassmorphism** — `fixed top-6`, `glass rounded-full`, max-w-2xl centré
-- **Logo SVG animé** — blocs qui glissent + pilier qui pulse (classes `.logo-block-*`, `.logo-pillar`)
-- Liens : Offres (`#offres`) · Portfolio (`#portfolio`) · Démo (`#bac-a-sable`)
-- CTA desktop : "Discuter" → `#rdv`, `rounded-full bg-encre`
-- Mobile : hamburger dans la pilule, menu s'étend vers le bas (`AnimatePresence`)
+### Nav (`Nav.tsx`) ✅
+- Pilule flottante glassmorphism `fixed top-6 inset-x-0`, `glass rounded-full`, max-w-2xl centré
+- Logo SVG animé (blocs qui glissent + pilier qui pulse)
+- Liens : Offres · Portfolio · Démo — CTA "Discuter" → `#rdv`
+- Mobile : hamburger dans la pilule, menu s'étend vers le bas
 
-### Hero (`Hero.tsx`) ✅ Mis à jour
-- **Layout asymétrique** : `grid lg:grid-cols-12` — 7 cols texte gauche / 5 cols cartes droite
-- **Blob ambiance** : `animate-blob bg-vert/10 blur-3xl` — rendu conditionnel si `!reduced`
-- **Badge** : "Développeur & Partenaire Digital à Niort"
-- **H1** : "Le centre de commande de votre entreprise." avec gradient grisé sur "entreprise." (`bg-clip-text from-encre/60 to-encre/25`)
-- **CTAs pilules** : "Tester l'outil (Démo)" `rounded-full bg-vert` + "J'ai besoin d'un site vitrine" `rounded-full border`
-- **Cartes droite (desktop)** : CardFacture / CardRDV / CardVisites en colonne avec `animate-float-*`
-- **Cartes mobile** : carrousel horizontal `overflow-x-auto snap-x`
+### Hero (`Hero.tsx`) ✅
+- Layout asymétrique `grid lg:grid-cols-12` — 7 cols texte / 5 cols photo
+- Badge : "Développeur web indépendant à Niort"
+- H1 : "Votre site. Votre gestion. Un seul endroit." (gradient grisé sur derniers mots)
+- CTAs : "Voir comment ça marche" (vert) + "J'ai besoin d'un site vitrine" (border)
+- Téléphone discret sous les CTAs : 06 74 90 36 53
+- Photo de Paul en colonne droite desktop avec overlay "Artisan du Web. / Basé à Niort · Disponible partout"
+- Blob vert flou en arrière-plan (rendu conditionnel si `!reduced`)
+- Mobile : cartes (Facture, RDV, Visites) en carrousel horizontal
 
 ### Probleme (`Probleme.tsx`) ✅
-- Section `bg-white`, 3 cartes `bg-fond rounded-3xl`
-- Données chiffrées : 80€/mois gaspillés · 5h/semaine perdues · 0 appel généré
+- 3 cartes : 80€/mois gaspillés · 5h/semaine perdues · 0 appel généré
+- Texte : sans jargon, sans référence à un secteur spécifique
 
 ### Bifurcation (`Bifurcation.tsx`) ✅
-- Section `#offres`, 2 colonnes
-- **Gauche** : Offre Présence — fond blanc, 5 arguments, prix 800€, CTA "Demander un devis"
-- **Droite** : Bureau Virtuel — fond `bg-encre`, glow vert, badge "Recommandé", prix 3 500€ + 89€/mois, CTA "Tester le tableau de bord"
+- Titre : "Deux offres. Un seul engagement : que ça marche."
+- Gauche : Offre Présence 800€ (fond blanc)
+- Droite : Bureau Virtuel 3 500€ + 89€/mois (fond encre, glow vert, badge "Recommandé")
 
 ### CommentCaMarche (`CommentCaMarche.tsx`) ✅
-- Section `#bureau-virtuel`, `bg-white`
-- 3 étapes numérotées 01/02/03 avec ligne de connexion desktop
+- 3 étapes : 01 Config espace (48h) → 02 Personnalisation → 03 Vous gérez tout
 - Numéro direct en bas de section
 
-### Portfolio (`Portfolio.tsx`) ✅ (projets démo)
-- Section `#portfolio`, `bg-fond`
-- **2 projets démo** avec `MockupSite` (composant généré, pas de vraie image) :
-  - "Occitanie Rénov'" — tags Bureau Virtuel, Agenda, Devis PDF
-  - "Maçonnerie Durand" — tags Site Vitrine, SEO Local, PageSpeed 98
-- Badge "Projet démo" visible sur chaque card
-- Slot vide en bas "Votre entreprise ici"
+### Portfolio (`Portfolio.tsx`) ✅
+- Grille asymétrique style v1 : Emylas + Mathilde côte à côte (Mathilde décalée vers le bas)
+- Moment d'Évasion en carte large panoramique en dessous
+- Chaque card cliquable → page étude de cas (`/projets/[nom].html`)
+- Images : `/public/assets/emylas.png`, `mathilde.png`, `moment.png`
+- Chemins préfixés `import.meta.env.BASE_URL` pour compatibilité GitHub Pages
 
-### BacASable (`BacASable.tsx`) ✅ (UI seulement)
-- Section `#bac-a-sable`, fond vert `#10B981`
-- Modale glassmorphism centrée, entreprise "Occitanie Rénov'"
-- Email pré-rempli `demo@esthor-solution.fr`, mot de passe `demo1234` (toggle afficher/masquer)
-- **⚠️ Bouton "Lancer la simulation" ne fait rien pour l'instant** — doit pointer vers `bureau-virtuel/`
-
-### Manifeste (`Manifeste.tsx`) ✅ (placeholder photo)
-- Section `#manifeste`, `bg-encre`, layout 2 colonnes
-- Polaroïd avec cadre vert décalé — **⚠️ photo placeholder picsum, à remplacer par la vraie photo**
-- Citation : "Je code pour ceux qui travaillent dur."
-- Badge localisation : "Basé en Occitanie"
+### BacASable (`BacASable.tsx`) ✅ — fusionné avec Manifeste
+- Section `#bac-a-sable`, fond `bg-encre`, 2 colonnes
+- Gauche : citation + texte fondateur + signature Paul Esthor + bouton téléphone
+- Droite : modale démo "Niort Rénov'" — email `admin@bureauvirtuel.fr` / mdp `admin2026`
+- Bouton → `${import.meta.env.BASE_URL}demo/?demo=true` (auto-login bureau-virtuel embarqué)
+- ⚠️ Mettre à jour DEMO_URL quand domaine configuré → `https://esthor-solution.fr/demo/?demo=true`
 
 ### FAQ (`FAQ.tsx`) ✅
-- Section `#faq`, `bg-fond`
-- Layout sticky : titre à gauche, accordion à droite
-- 6 questions : tech-phobie, arrêt activité, propriété, délais, 89€ couvre quoi, modifications
+- Layout sticky desktop : titre gauche, accordion droite
+- 6 questions : tech-phobie · arrêt activité · propriété contenu · délais · 89€/mois · modifications
 
-### CTAFinal (`CTAFinal.tsx`) ✅ (UI seulement)
-- Section `#rdv`, `bg-fond`
-- Sélecteur créneaux (4 jours hardcodés) + confirmation locale
-- **⚠️ Pas d'envoi email réel** — à brancher sur Supabase ou Resend
-- Alternative : carte appel direct 06 74 90 36 53
+### CTAFinal (`CTAFinal.tsx`) ✅
+- Formulaire 2 étapes : sélection créneau → nom + téléphone
+- Dates dynamiques : 4 prochains jours ouvrés calculés à la volée (jamais dans le passé)
+- Envoi via Web3Forms → reçu par email à Paul
+- État : sending → success (avec rappel du numéro saisi) → error (fallback téléphone)
 
 ### Footer (`Footer.tsx`) ✅
-- `bg-encre`, 4 colonnes : Logo · Offres · Légal · Contact
-- **⚠️ SIRET à remplir** : `XXX XXX XXX XXXXX`
-- **⚠️ Pages légales manquantes** : `/mentions-legales`, `/politique-confidentialite`, `/cgv`
-- Email : `contact@esthor-solution.fr`
+- 4 colonnes : Logo · Prestations + Zones SEO · Légal · Contact
+- Zones SEO : liens vers `/niort.html` et `/limoges.html` (liens internes pour Google)
+- Liens légaux avec extension `.html` et BASE_URL prefix
+- SIRET "en cours d'immatriculation"
 
 ---
 
-## Ce qui est FAIT ✅
+## Fichiers statiques dans `/public/`
 
-- [x] Toutes les sections codées et animées
-- [x] Design system complet (couleurs, typo, glass, spacing)
-- [x] Police auto-hébergée (RGPD OK)
-- [x] Nav pilule glassmorphism + logo SVG animé
-- [x] Hero asymétrique avec blob + gradient text + cartes flottantes
-- [x] Offres (Présence 800€ + Bureau Virtuel 3500€+89€/mois)
-- [x] Processus 3 étapes
-- [x] Portfolio avec 3 vrais projets (Emylas, Mathilde Gesta, Moment d'Évasion)
-- [x] Bac à sable (UI modale, bouton → https://demo.esthor-solution.fr à remplacer)
-- [x] Manifeste fondateur (polaroïd, vraie photo /assets/paul.webp)
-- [x] FAQ 6 questions
-- [x] CTA prise de RDV (UI créneaux)
-- [x] Footer complet
-- [x] `prefers-reduced-motion` respecté partout
-- [x] Responsive mobile (carrousel, hamburger)
-
----
-
-## Ce qui est À FAIRE ⚠️
-
-- [ ] **Bouton "Lancer la simulation"** → router vers `bureau-virtuel/` (le dashboard démo qui existe dans `/bureau-virtuel/`)
-- [ ] **Créneaux RDV réels** → brancher sur Supabase ou Resend pour envoi email
-- [ ] **SIRET** dans le footer
-- [ ] **Pages légales** : mentions légales, CGV, politique de confidentialité
-- [ ] **Analytics** : installer Plausible ou Umami (pas Google Analytics — RGPD)
-- [ ] **Domaine** : configurer esthor.fr ou esthor-solution.fr
-- [ ] **URL bac à sable** : remplacer `https://demo.esthor-solution.fr` par la vraie URL de déploiement du bureau-virtuel
-- [ ] **Landing pages locales** : `/niort` et `/limoges` pour SEO local
-- [ ] **GitHub Action keep-alive** Supabase (quand le SaaS sera branché)
+| Fichier | Description |
+|---|---|
+| `assets/paul.webp` | Photo de Paul (Hero + Manifeste) |
+| `assets/emylas.png` | Screenshot site Emylas |
+| `assets/mathilde.png` | Screenshot site Mathilde Gesta |
+| `assets/moment.png` | Screenshot site Moment d'Évasion |
+| `fonts/PlusJakartaSans-*.ttf` | Polices auto-hébergées (RGPD) |
+| `demo/index.html` | Bureau-virtuel buildé (viteSingleFile) |
+| `projets/emylas.html` | Étude de cas Emylas |
+| `projets/mathilde-gesta.html` | Étude de cas Mathilde Gesta |
+| `projets/moment-devasion.html` | Étude de cas Moment d'Évasion |
+| `niort.html` | Landing page SEO Niort |
+| `limoges.html` | Landing page SEO Limoges |
+| `mentions-legales.html` | Mentions légales |
+| `politique-confidentialite.html` | Politique de confidentialité RGPD |
+| `cgv.html` | Conditions Générales de Vente |
+| `sitemap.xml` | Sitemap (URLs esthor-solution.fr) |
+| `robots.txt` | Bloque /demo/, pointe vers sitemap |
 
 ---
 
-## Contacts & liens utiles
+## SEO en place
 
-- Tél : 06 74 90 36 53
-- Email : contact@esthor-solution.fr
-- Dashboard démo : dossier `../bureau-virtuel/` (React app, port 5174 suggéré)
-- Roadmap complète : `../Préparation/Road Map.txt` et `Road Map et Idées du site.txt`
+- **Title :** "Esthor Solution | Développeur Web à Niort — Sites & Logiciels pour Artisans et PME"
+- **Meta description :** optimisée mots-clés Niort + Deux-Sèvres + Vienne + Haute-Vienne
+- **Schema.org :** LocalBusiness + ProfessionalService + OfferCatalog complet
+- **Canonical :** `https://esthor-solution.fr/`
+- **sitemap.xml :** 9 URLs avec priorités et fréquences
+- **robots.txt :** Allow tout sauf /demo/
+- **Plausible :** script présent, activable dès le domaine configuré (RGPD, sans cookie)
+
+---
+
+## Étapes restantes → voir `DEPLOIEMENT.md`
+
+**Bloquant :** Acheter le domaine `esthor-solution.fr` → changer `base: '/'` dans `vite.config.ts` → redéployer.
+**Après domaine :** Google Search Console + Google Business Profile + Plausible.
+**Au fil du temps :** Vrais témoignages clients · SIRET · Mathilde site live.
