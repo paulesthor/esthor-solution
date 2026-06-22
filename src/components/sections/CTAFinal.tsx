@@ -5,12 +5,35 @@ import { Phone, Calendar, ArrowRight, CheckCircle2, Loader2 } from 'lucide-react
 // ▼ REMPLACE PAR TA CLÉ WEB3FORMS (web3forms.com → "Create Access Key")
 const WEB3FORMS_KEY = '1c9141a9-d7d5-4717-ab58-483833f0fd2e'
 
-const CRENEAUX = [
-  { jour: 'Lun', date: '23 juin', slots: ['09h00', '14h30', '16h00'] },
-  { jour: 'Mar', date: '24 juin', slots: ['10h00', '11h30'] },
-  { jour: 'Mer', date: '25 juin', slots: ['09h30', '15h00', '17h00'] },
-  { jour: 'Jeu', date: '26 juin', slots: ['10h30', '14h00'] },
-]
+function getProchainsCreneaux() {
+  const joursCourts = ['Dim', 'Lun', 'Mar', 'Mer', 'Jeu', 'Ven', 'Sam']
+  const moisCourts = ['jan', 'fév', 'mar', 'avr', 'mai', 'juin', 'juil', 'août', 'sep', 'oct', 'nov', 'déc']
+  const slotsParJour = [
+    ['09h00', '14h30', '16h00'],
+    ['10h00', '11h30'],
+    ['09h30', '15h00', '17h00'],
+    ['10h30', '14h00'],
+  ]
+  const result = []
+  const date = new Date()
+  date.setDate(date.getDate() + 1)
+  let idx = 0
+  while (result.length < 4) {
+    const day = date.getDay()
+    if (day !== 0 && day !== 6) {
+      result.push({
+        jour: joursCourts[day],
+        date: `${date.getDate()} ${moisCourts[date.getMonth()]}`,
+        slots: slotsParJour[idx % 4],
+      })
+      idx++
+    }
+    date.setDate(date.getDate() + 1)
+  }
+  return result
+}
+
+const CRENEAUX = getProchainsCreneaux()
 
 type Etape = 'slot' | 'contact' | 'sending' | 'success' | 'error'
 

@@ -99,7 +99,7 @@ export default function Hero() {
             <motion.div variants={item(reduced)}>
               <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/70 backdrop-blur-sm border border-encre/10 text-sm font-semibold text-encre/70 mb-8">
                 <span className="w-2 h-2 rounded-full bg-vert animate-pulse shrink-0" aria-hidden="true" />
-                Développeur & Partenaire Digital à Niort
+                Développeur web indépendant à Niort
               </span>
             </motion.div>
 
@@ -108,10 +108,9 @@ export default function Hero() {
               variants={item(reduced)}
               className="text-[clamp(2.6rem,6.5vw,5rem)] font-extrabold text-encre leading-[1.05] tracking-tighter mb-6"
             >
-              Le centre de commande<br className="hidden sm:block" />
-              de votre{' '}
+              Votre site. Votre gestion.{' '}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-encre/60 to-encre/25">
-                entreprise.
+                Un seul endroit.
               </span>
             </motion.h1>
 
@@ -135,7 +134,7 @@ export default function Hero() {
                 href="#bac-a-sable"
                 className="group flex items-center gap-2 px-7 py-3.5 bg-vert text-white text-base font-bold rounded-full hover:opacity-90 transition-opacity duration-200 shadow-lg shadow-vert/25 cursor-pointer"
               >
-                Tester l'outil (Démo)
+                Voir comment ça marche
                 <ArrowRight size={16} strokeWidth={2.5} className="group-hover:translate-x-1 transition-transform duration-200" aria-hidden="true" />
               </a>
               <a
@@ -163,7 +162,7 @@ export default function Hero() {
               <div className="absolute inset-0 bg-gradient-to-t from-encre/70 via-transparent to-transparent" />
               <div className="absolute bottom-6 left-6 right-6">
                 <p className="text-white font-extrabold text-2xl tracking-tight leading-tight">Artisan du Web.</p>
-                <p className="text-white/60 text-sm font-medium mt-1">Conçu et développé à Niort</p>
+                <p className="text-white/60 text-sm font-medium mt-1">Basé à Niort · Disponible partout</p>
               </div>
             </div>
           </motion.div>

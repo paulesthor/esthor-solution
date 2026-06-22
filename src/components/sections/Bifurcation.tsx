@@ -39,7 +39,7 @@ export default function Bifurcation() {
             Les offres
           </span>
           <h2 className="text-4xl md:text-5xl font-extrabold text-encre tracking-tighter leading-tight">
-            Deux besoins.<br />Une seule exigence.
+            Deux offres.<br />Un seul engagement : que ça marche.
           </h2>
         </motion.div>
 

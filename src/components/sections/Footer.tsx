@@ -33,7 +33,7 @@ export default function Footer() {
               Artisan du web basé à Niort. Sites vitrines ultra-rapides et logiciels de gestion PME sur-mesure pour les indépendants de Niort, Limoges et au-delà.
             </p>
             <p className="text-xs text-fond/20 font-medium">
-              SIRET : XXX XXX XXX XXXXX
+              SIRET : en cours d'immatriculation
             </p>
           </div>
 

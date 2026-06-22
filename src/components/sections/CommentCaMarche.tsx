@@ -7,7 +7,7 @@ const ETAPES = [
     num: "01",
     icon: Settings,
     titre: "On installe votre tableau de bord",
-    texte: "Je configure votre espace en 48h. Vos données restent chez vous — pas de plateforme tierce, pas de partage avec qui que ce soit.",
+    texte: "Je configure votre espace de travail en 48h pour qu'on puisse démarrer ensemble. Vos données restent chez vous — pas de plateforme tierce, pas de partage avec qui que ce soit.",
   },
   {
     num: "02",

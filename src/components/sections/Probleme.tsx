@@ -7,14 +7,14 @@ const PROBLEMES = [
   {
     icon: CreditCard,
     titre: "3 abonnements. 3 factures. Chaque mois.",
-    texte: "Wix à 20€, Calendly à 12€, Sellsy à 49€... Vous payez trois outils qui ne se parlent pas, et vous ressaisissez les mêmes infos partout.",
+    texte: "Wix à 25€, Calendly à 12€, un outil de facturation à 40€... Vous payez trois outils qui ne se parlent pas, et vous ressaisissez les mêmes informations partout.",
     chiffre: "80€/mois",
     label: "gaspillés en moyenne",
   },
   {
     icon: Clock,
     titre: "5 heures par semaine perdues sur l'administratif.",
-    texte: "Devis sur Word, factures sur Excel, relances par SMS. Des heures de travail qui ne rapportent rien, pendant que votre chantier vous attend.",
+    texte: "Devis sur Word, factures sur Excel, relances par SMS. Des heures passées sur l'administratif au lieu de faire tourner votre activité.",
     chiffre: "5h/semaine",
     label: "de temps récupérables",
   },

@@ -73,7 +73,7 @@ export default function BacASable() {
               Ne me croyez pas sur parole.
             </h2>
             <p className="text-fond/50 text-sm leading-relaxed mb-8">
-              Connectez-vous à l'espace de démonstration <strong className="text-fond/80">Occitanie Rénov'</strong> et testez le tableau de bord vous-même.
+              Connectez-vous à l'espace de démonstration <strong className="text-fond/80">Niort Rénov'</strong> et testez le tableau de bord vous-même.
             </p>
 
             {/* Modale de connexion */}
@@ -85,7 +85,7 @@ export default function BacASable() {
                 </div>
                 <div>
                   <p className="text-[10px] font-bold uppercase tracking-widest text-encre/40">Entreprise de démonstration</p>
-                  <p className="text-sm font-extrabold text-encre tracking-tight">Occitanie Rénov'</p>
+                  <p className="text-sm font-extrabold text-encre tracking-tight">Niort Rénov'</p>
                 </div>
               </div>
 

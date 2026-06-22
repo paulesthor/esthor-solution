@@ -13,7 +13,7 @@ const QUESTIONS = [
   },
   {
     q: "Est-ce que je suis propriétaire de mon site ?",
-    r: "Vous êtes propriétaire de l'usage et du contenu. Le code source reste ma propriété intellectuelle — c'est ce qui me permet de maintenir et de faire évoluer votre site à moindre coût. Si vous souhaitez la propriété complète du code, c'est possible avec un avenant.",
+    r: "Votre contenu, vos textes, vos photos et votre nom de domaine vous appartiennent à 100%. Le code source reste de mon côté — ce qui me permet d'assurer votre maintenance sans vous facturer chaque correction. Si vous souhaitez en être propriétaire complet un jour, c'est prévu et possible sur devis.",
   },
   {
     q: "Combien de temps pour avoir mon site en ligne ?",
@@ -25,7 +25,7 @@ const QUESTIONS = [
   },
   {
     q: "Puis-je modifier mon site moi-même sans vous appeler ?",
-    r: "Pour le Bureau Virtuel, oui : l'éditeur intégré vous permet de modifier vos textes, tarifs et photos sans toucher au code. Pour des changements plus importants (nouvelle page, nouvelle section), je m'en occupe dans le cadre de la maintenance.",
+    r: "Pour le Bureau Virtuel, oui — modifier vos textes, photos ou tarifs se fait en quelques clics depuis votre espace, sans toucher au code. Pour un site vitrine simple, je m'en occupe directement sur demande, en général en moins de 24h. Dans tous les cas, vous n'avez pas à vous débrouiller seul.",
   },
 ]
 
