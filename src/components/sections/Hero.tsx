@@ -70,12 +70,6 @@ const item = (reduced: boolean) => ({
   visible: { opacity: 1, y: 0, transition: { duration: 0.65, ease: 'easeOut' as const } },
 })
 
-const cardEntry = (delay: number, reduced: boolean) => ({
-  initial: { opacity: 0, y: reduced ? 0 : 20 },
-  animate: { opacity: 1, y: 0 },
-  transition: { duration: 0.5, delay },
-})
-
 /* ── Hero ── */
 export default function Hero() {
   const reduced = useReducedMotion() ?? false
