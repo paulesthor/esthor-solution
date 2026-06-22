@@ -8,7 +8,8 @@ const PROJETS = [
     categorie: "Animation sportive · Rhône-Alpes",
     description: "Une carte de visite digitale qui travaille 24h/24. Les clients trouvent Emylas sur Google, découvrent ses prestations et envoient une demande de devis directement depuis le site.",
     img: `${import.meta.env.BASE_URL}assets/emylas.png`,
-    url: "https://www.emylas.fr",
+    url: `${import.meta.env.BASE_URL}projets/emylas.html`,
+    urlExterne: "https://www.emylas.fr",
     offre: "Offre Présence",
     tarif: "~800 €",
   },
@@ -17,7 +18,8 @@ const PROJETS = [
     categorie: "Tapissière artisan · Occitanie",
     description: "Mathilde gère son catalogue de créations et ses commandes clients depuis un espace personnel sécurisé — sans passer par email ou Excel.",
     img: `${import.meta.env.BASE_URL}assets/mathilde.png`,
-    url: null,
+    url: `${import.meta.env.BASE_URL}projets/mathilde-gesta.html`,
+    urlExterne: null,
     offre: "Bureau Virtuel",
     tarif: "~2 500 €",
   },
@@ -26,7 +28,8 @@ const PROJETS = [
     categorie: "Massage & bien-être · Montamisé",
     description: "La praticienne gère tout depuis son téléphone : elle modifie ses textes et photos elle-même, voit ses rendez-vous synchronisés avec Google Agenda, bloque ses congés et répond à ses clients via une messagerie intégrée. Ses clients réservent en ligne, 7j/7.",
     img: `${import.meta.env.BASE_URL}assets/moment.png`,
-    url: "https://paulesthor.github.io/moment/",
+    url: `${import.meta.env.BASE_URL}projets/moment-devasion.html`,
+    urlExterne: "https://paulesthor.github.io/moment/",
     offre: "Bureau Virtuel Premium",
     tarif: "~4 500 €",
   },
@@ -73,13 +76,9 @@ export default function Portfolio() {
             transition={{ duration: 0.55, delay: 0.1 }}
             className="group cursor-pointer"
           >
-            <a href={emylas.url!} target="_blank" rel="noopener noreferrer" className="block">
+            <a href={emylas.url} className="block">
               <div className="w-full aspect-[4/3] rounded-[2rem] overflow-hidden relative mb-6 shadow-md border border-encre/8">
-                <img
-                  src={emylas.img}
-                  alt={`Site ${emylas.nom}`}
-                  className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
-                />
+                <img src={emylas.img} alt={`Site ${emylas.nom}`} className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105" />
                 <div className="absolute inset-0 bg-encre/0 group-hover:bg-encre/10 transition-colors duration-300" />
                 <div className="absolute top-5 right-5 w-11 h-11 bg-white rounded-full flex items-center justify-center opacity-0 translate-y-3 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 shadow-xl">
                   <ArrowRight size={16} className="text-encre" />
@@ -94,16 +93,18 @@ export default function Portfolio() {
             initial={{ opacity: 0, y: 28 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.55, delay: 0.22 }}
-            className="group cursor-default md:mt-16"
+            className="group cursor-pointer md:mt-16"
           >
-            <div className="w-full aspect-[4/3] rounded-[2rem] overflow-hidden relative mb-6 shadow-md border border-encre/8">
-              <img
-                src={mathilde.img}
-                alt={`Site ${mathilde.nom}`}
-                className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
-              />
-            </div>
-            <InfoProjet projet={mathilde} />
+            <a href={mathilde.url} className="block">
+              <div className="w-full aspect-[4/3] rounded-[2rem] overflow-hidden relative mb-6 shadow-md border border-encre/8">
+                <img src={mathilde.img} alt={`Site ${mathilde.nom}`} className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105" />
+                <div className="absolute inset-0 bg-encre/0 group-hover:bg-encre/10 transition-colors duration-300" />
+                <div className="absolute top-5 right-5 w-11 h-11 bg-white rounded-full flex items-center justify-center opacity-0 translate-y-3 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 shadow-xl">
+                  <ArrowRight size={16} className="text-encre" />
+                </div>
+              </div>
+              <InfoProjet projet={mathilde} />
+            </a>
           </motion.div>
         </div>
 
@@ -114,7 +115,7 @@ export default function Portfolio() {
           transition={{ duration: 0.55, delay: 0.36 }}
           className="group"
         >
-          <a href={moment.url!} target="_blank" rel="noopener noreferrer" className="block">
+          <a href={moment.url} className="block">
             <div className="w-full aspect-[16/6] rounded-[2rem] overflow-hidden relative mb-6 shadow-md border border-encre/8">
               <img
                 src={moment.img}

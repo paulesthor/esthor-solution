@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Emylas Animation — Étude de cas · Esthor Solution</title>
+  <meta name="description" content="Comment un site vitrine bien construit a permis à Emylas Animation de décrocher ses premiers contrats en ligne, sans bouche à oreille." />
+  <style>
+    @font-face { font-family: 'Plus Jakarta Sans'; font-weight: 400; font-display: swap; src: url('../fonts/PlusJakartaSans-Regular.ttf'); }
+    @font-face { font-family: 'Plus Jakarta Sans'; font-weight: 500; font-display: swap; src: url('../fonts/PlusJakartaSans-Medium.ttf'); }
+    @font-face { font-family: 'Plus Jakarta Sans'; font-weight: 600; font-display: swap; src: url('../fonts/PlusJakartaSans-SemiBold.ttf'); }
+    @font-face { font-family: 'Plus Jakarta Sans'; font-weight: 700; font-display: swap; src: url('../fonts/PlusJakartaSans-Bold.ttf'); }
+    @font-face { font-family: 'Plus Jakarta Sans'; font-weight: 800; font-display: swap; src: url('../fonts/PlusJakartaSans-ExtraBold.ttf'); }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root { --fond: #FDFBF7; --encre: #18181B; --vert: #10B981; }
+    body { font-family: 'Plus Jakarta Sans', sans-serif; background: var(--fond); color: var(--encre); font-size: 16px; line-height: 1.7; -webkit-font-smoothing: antialiased; }
+    a { color: var(--vert); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    img { max-width: 100%; display: block; }
+
+    /* Nav */
+    .nav-wrap { position: fixed; top: 20px; left: 50%; transform: translateX(-50%); z-index: 50; padding: 0 16px; width: 100%; max-width: 780px; }
+    nav { background: rgba(255,255,255,.75); backdrop-filter: blur(20px); border: 1px solid rgba(255,255,255,.95); box-shadow: 0 4px 24px rgba(24,24,27,.08); border-radius: 999px; padding: 10px 20px; display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+    .nav-logo { font-weight: 800; font-size: .95rem; color: var(--encre); letter-spacing: -.03em; }
+    .nav-back { font-size: .8rem; font-weight: 600; color: rgba(24,24,27,.45); display: flex; align-items: center; gap: 6px; }
+    .nav-back:hover { color: var(--encre); text-decoration: none; }
+    .nav-cta { background: var(--encre); color: var(--fond); padding: 7px 18px; border-radius: 999px; font-size: .8rem; font-weight: 700; white-space: nowrap; }
+    .nav-cta:hover { opacity: .8; text-decoration: none; }
+
+    /* Hero */
+    .hero { padding: 120px 24px 64px; max-width: 780px; margin: 0 auto; }
+    .tags { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 20px; }
+    .tag { padding: 4px 12px; border-radius: 999px; font-size: .72rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; }
+    .tag-offre { background: rgba(16,185,129,.1); color: var(--vert); }
+    .tag-secteur { background: rgba(24,24,27,.06); color: rgba(24,24,27,.5); }
+    h1 { font-size: clamp(2rem, 5vw, 3.2rem); font-weight: 800; letter-spacing: -.04em; line-height: 1.05; margin-bottom: 16px; }
+    .hero-desc { font-size: 1.1rem; color: rgba(24,24,27,.55); max-width: 560px; margin-bottom: 28px; line-height: 1.6; }
+    .hero-links { display: flex; gap: 12px; flex-wrap: wrap; }
+    .btn-primary { display: inline-flex; align-items: center; gap: 8px; padding: 12px 22px; background: var(--encre); color: var(--fond); border-radius: 999px; font-weight: 700; font-size: .88rem; }
+    .btn-primary:hover { opacity: .8; text-decoration: none; }
+    .btn-ghost { display: inline-flex; align-items: center; gap: 8px; padding: 12px 22px; border: 2px solid rgba(24,24,27,.15); color: var(--encre); border-radius: 999px; font-weight: 700; font-size: .88rem; }
+    .btn-ghost:hover { border-color: rgba(24,24,27,.4); text-decoration: none; }
+
+    /* Screenshot */
+    .screenshot { max-width: 780px; margin: 0 auto 80px; padding: 0 24px; }
+    .screenshot img { width: 100%; border-radius: 24px; border: 1px solid rgba(24,24,27,.08); box-shadow: 0 24px 80px rgba(24,24,27,.12); }
+
+    /* Contenu */
+    .content { max-width: 780px; margin: 0 auto; padding: 0 24px 80px; }
+
+    /* Stats */
+    .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 16px; margin-bottom: 64px; }
+    .stat { background: white; border-radius: 20px; padding: 24px; border: 1px solid rgba(24,24,27,.07); }
+    .stat-value { font-size: 2.2rem; font-weight: 800; letter-spacing: -.04em; color: var(--encre); line-height: 1; margin-bottom: 6px; }
+    .stat-value.green { color: var(--vert); }
+    .stat-label { font-size: .75rem; font-weight: 600; color: rgba(24,24,27,.4); text-transform: uppercase; letter-spacing: .06em; }
+
+    /* Sections */
+    .section { margin-bottom: 56px; }
+    .section-label { font-size: .72rem; font-weight: 700; text-transform: uppercase; letter-spacing: .1em; color: var(--vert); margin-bottom: 12px; }
+    h2 { font-size: 1.5rem; font-weight: 800; letter-spacing: -.03em; margin-bottom: 16px; line-height: 1.2; }
+    p { color: rgba(24,24,27,.65); margin-bottom: 14px; }
+    p:last-child { margin-bottom: 0; }
+
+    /* Features */
+    .features { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; margin-top: 20px; }
+    .feature { background: white; border-radius: 16px; padding: 18px 20px; border: 1px solid rgba(24,24,27,.07); display: flex; align-items: flex-start; gap: 12px; }
+    .feature-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--vert); flex-shrink: 0; margin-top: 7px; box-shadow: 0 0 8px rgba(16,185,129,.5); }
+    .feature-text { font-size: .88rem; font-weight: 600; color: var(--encre); line-height: 1.4; }
+
+    /* Testimonial */
+    .testimonial { background: var(--encre); border-radius: 24px; padding: 40px; margin: 56px 0; }
+    .quote { font-size: 1.2rem; font-weight: 700; color: white; line-height: 1.55; margin-bottom: 20px; font-style: italic; }
+    .quote::before { content: '\201C'; }
+    .quote::after { content: '\201D'; }
+    .author { display: flex; align-items: center; gap: 12px; }
+    .author-dot { width: 36px; height: 36px; border-radius: 50%; background: var(--vert); flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: .8rem; color: white; }
+    .author-name { font-weight: 700; color: white; font-size: .9rem; }
+    .author-role { font-size: .78rem; color: rgba(255,255,255,.4); font-weight: 500; }
+
+    /* Stack */
+    .stack { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
+    .stack-item { padding: 6px 14px; background: rgba(24,24,27,.06); border-radius: 999px; font-size: .78rem; font-weight: 600; color: rgba(24,24,27,.6); }
+
+    /* CTA */
+    .cta-box { background: white; border-radius: 24px; border: 1px solid rgba(24,24,27,.08); padding: 40px; text-align: center; margin-top: 64px; }
+    .cta-box h3 { font-size: 1.4rem; font-weight: 800; letter-spacing: -.03em; margin-bottom: 10px; }
+    .cta-box p { color: rgba(24,24,27,.5); margin-bottom: 24px; }
+
+    /* Sep */
+    .sep { border: none; border-top: 1px solid rgba(24,24,27,.07); margin: 56px 0; }
+
+    /* Footer */
+    footer { text-align: center; padding: 24px; font-size: .78rem; color: rgba(24,24,27,.3); font-weight: 600; border-top: 1px solid rgba(24,24,27,.07); }
+
+    @media (max-width: 600px) {
+      .hero { padding-top: 100px; }
+      h1 { font-size: 1.8rem; }
+      .testimonial { padding: 28px; }
+      .quote { font-size: 1rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="nav-wrap">
+    <nav>
+      <a href="../" class="nav-logo">Esthor.</a>
+      <a href="../#portfolio" class="nav-back">← Retour au portfolio</a>
+      <a href="../#rdv" class="nav-cta">Projet similaire ?</a>
+    </nav>
+  </div>
+
+  <div class="hero">
+    <div class="tags">
+      <span class="tag tag-offre">Offre Présence</span>
+      <span class="tag tag-secteur">Animation sportive</span>
+      <span class="tag tag-secteur">Rhône-Alpes</span>
+    </div>
+    <h1>Emylas Animation</h1>
+    <p class="hero-desc">
+      Un animateur sportif invisible sur Google, qui travaillait uniquement par recommandation. Aujourd'hui son site génère des demandes de devis en autonome.
+    </p>
+    <div class="hero-links">
+      <a href="https://www.emylas.fr" target="_blank" rel="noopener noreferrer" class="btn-primary">Voir le site en direct ↗</a>
+      <a href="../#rdv" class="btn-ghost">Un projet similaire ?</a>
+    </div>
+  </div>
+
+  <div class="screenshot">
+    <img src="../assets/emylas.png" alt="Capture d'écran du site Emylas Animation" />
+  </div>
+
+  <div class="content">
+
+    <!-- Stats -->
+    <div class="stats">
+      <div class="stat">
+        <div class="stat-value green">+3</div>
+        <div class="stat-label">Contrats décrochés via le site</div>
+      </div>
+      <div class="stat">
+        <div class="stat-value">10j</div>
+        <div class="stat-label">Délai de livraison</div>
+      </div>
+      <div class="stat">
+        <div class="stat-value">800€</div>
+        <div class="stat-label">Investissement total</div>
+      </div>
+      <div class="stat">
+        <div class="stat-value green">0€</div>
+        <div class="stat-label">D'abonnement mensuel</div>
+      </div>
+    </div>
+
+    <!-- Contexte -->
+    <div class="section">
+      <p class="section-label">Le contexte</p>
+      <h2>Un animateur qui vivait 100% du bouche à oreille</h2>
+      <p>Baptiste intervient lors de compétitions sportives, galas de gym et événements d'entreprise en Rhône-Alpes. Son travail est reconnu par ceux qui l'ont vu à l'œuvre — mais en dehors de son réseau, personne ne le connaissait.</p>
+      <p>Sans présence en ligne, chaque nouveau contrat dépendait d'une recommandation. Pas de site, pas de visibilité sur Google, pas de moyen pour un organisateur de le trouver en cherchant "animateur sportif Lyon" ou "animation gala de gym Rhône-Alpes".</p>
+    </div>
+
+    <hr class="sep" />
+
+    <!-- Problème -->
+    <div class="section">
+      <p class="section-label">Le problème</p>
+      <h2>Invisible là où les clients cherchent</h2>
+      <p>Les organisateurs d'événements sportifs ne demandent pas autour d'eux — ils tapent sur Google. Sans site, Baptiste n'existait tout simplement pas pour eux.</p>
+      <p>Il avait besoin d'un endroit simple où montrer ce qu'il fait, convaincre en quelques secondes et permettre à un organisateur de lui envoyer une demande de devis directement, à n'importe quelle heure.</p>
+    </div>
+
+    <hr class="sep" />
+
+    <!-- Solution -->
+    <div class="section">
+      <p class="section-label">La solution</p>
+      <h2>Un site vitrine qui travaille la nuit</h2>
+      <p>Un site one-page épuré, conçu pour convaincre rapidement : présentation des prestations, galerie de réalisations, et un formulaire de demande de devis directement intégré. Optimisé pour le référencement local afin d'apparaître en premier quand un organisateur cherche une animation sportive dans la région.</p>
+      <div class="features">
+        <div class="feature"><div class="feature-dot"></div><div class="feature-text">Visible sur Google Rhône-Alpes</div></div>
+        <div class="feature"><div class="feature-dot"></div><div class="feature-text">Formulaire de devis intégré</div></div>
+        <div class="feature"><div class="feature-dot"></div><div class="feature-text">Présentation des 3 prestations clés</div></div>
+        <div class="feature"><div class="feature-dot"></div><div class="feature-text">Galerie de réalisations</div></div>
+        <div class="feature"><div class="feature-dot"></div><div class="feature-text">100% statique — zéro maintenance</div></div>
+        <div class="feature"><div class="feature-dot"></div><div class="feature-text">Livré en 10 jours ouvrés</div></div>
+      </div>
+    </div>
+
+    <!-- Testimonial -->
+    <div class="testimonial">
+      <p class="quote">Depuis que le site est en ligne, j'ai reçu mes premières demandes d'organisateurs que je ne connaissais pas du tout. Ils m'avaient simplement trouvé sur Google. C'est exactement ce que je cherchais.</p>
+      <div class="author">
+        <div class="author-dot">B</div>
+        <div>
+          <div class="author-name">Baptiste</div>
+          <div class="author-role">Fondateur · Emylas Animation</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Résultats -->
+    <div class="section">
+      <p class="section-label">Les résultats</p>
+      <h2>Plusieurs contrats décrochés depuis la mise en ligne</h2>
+      <p>En quelques semaines après la mise en ligne, Emylas a reçu ses premières demandes de devis de personnes qui l'avaient trouvé directement sur Google — sans recommandation, sans réseau. Trois contrats ont été signés en dehors de son cercle habituel.</p>
+      <p>Le site tourne en autonome, sans abonnement mensuel. Baptiste n'a pas à s'en occuper : il existe en ligne, et ça travaille pour lui.</p>
+    </div>
+
+    <!-- Stack -->
+    <div class="section">
+      <p class="section-label">Technique</p>
+      <h2>Simple et robuste</h2>
+      <p>Site statique pur — aucune base de données, aucun serveur à maintenir. Rapide à charger, difficile à pirater, et sans abonnement logiciel.</p>
+      <div class="stack">
+        <span class="stack-item">HTML / CSS</span>
+        <span class="stack-item">Tailwind CSS</span>
+        <span class="stack-item">JavaScript</span>
+        <span class="stack-item">GitHub Pages</span>
+        <span class="stack-item">SEO Local</span>
+      </div>
+    </div>
+
+    <!-- CTA -->
+    <div class="cta-box">
+      <h3>Vous avez une activité similaire ?</h3>
+      <p>Un site vitrine bien fait coûte moins cher qu'un an d'abonnements. Et il vous amène des clients que vous n'auriez jamais rencontrés autrement.</p>
+      <a href="../#rdv" class="btn-primary">Réserver un appel gratuit de 15 min</a>
+    </div>
+
+  </div>
+
+  <footer>© 2026 Esthor Solution — <a href="../">Retour au site</a></footer>
+
+</body>
+</html>

@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mathilde Gesta — Étude de cas · Esthor Solution</title>
+  <meta name="description" content="Comment une tapissière artisan a remplacé ses échanges par SMS et ses fichiers Excel par un espace de gestion en ligne." />
+  <style>
+    @font-face { font-family: 'Plus Jakarta Sans'; font-weight: 400; font-display: swap; src: url('../fonts/PlusJakartaSans-Regular.ttf'); }
+    @font-face { font-family: 'Plus Jakarta Sans'; font-weight: 500; font-display: swap; src: url('../fonts/PlusJakartaSans-Medium.ttf'); }
+    @font-face { font-family: 'Plus Jakarta Sans'; font-weight: 600; font-display: swap; src: url('../fonts/PlusJakartaSans-SemiBold.ttf'); }
+    @font-face { font-family: 'Plus Jakarta Sans'; font-weight: 700; font-display: swap; src: url('../fonts/PlusJakartaSans-Bold.ttf'); }
+    @font-face { font-family: 'Plus Jakarta Sans'; font-weight: 800; font-display: swap; src: url('../fonts/PlusJakartaSans-ExtraBold.ttf'); }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root { --fond: #FDFBF7; --encre: #18181B; --vert: #10B981; }
+    body { font-family: 'Plus Jakarta Sans', sans-serif; background: var(--fond); color: var(--encre); font-size: 16px; line-height: 1.7; -webkit-font-smoothing: antialiased; }
+    a { color: var(--vert); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    img { max-width: 100%; display: block; }
+    .nav-wrap { position: fixed; top: 20px; left: 50%; transform: translateX(-50%); z-index: 50; padding: 0 16px; width: 100%; max-width: 780px; }
+    nav { background: rgba(255,255,255,.75); backdrop-filter: blur(20px); border: 1px solid rgba(255,255,255,.95); box-shadow: 0 4px 24px rgba(24,24,27,.08); border-radius: 999px; padding: 10px 20px; display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+    .nav-logo { font-weight: 800; font-size: .95rem; color: var(--encre); letter-spacing: -.03em; }
+    .nav-back { font-size: .8rem; font-weight: 600; color: rgba(24,24,27,.45); display: flex; align-items: center; gap: 6px; }
+    .nav-back:hover { color: var(--encre); text-decoration: none; }
+    .nav-cta { background: var(--encre); color: var(--fond); padding: 7px 18px; border-radius: 999px; font-size: .8rem; font-weight: 700; white-space: nowrap; }
+    .nav-cta:hover { opacity: .8; text-decoration: none; }
+    .hero { padding: 120px 24px 64px; max-width: 780px; margin: 0 auto; }
+    .tags { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 20px; }
+    .tag { padding: 4px 12px; border-radius: 999px; font-size: .72rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; }
+    .tag-offre { background: rgba(16,185,129,.1); color: var(--vert); }
+    .tag-wip { background: rgba(245,158,11,.1); color: #d97706; }
+    .tag-secteur { background: rgba(24,24,27,.06); color: rgba(24,24,27,.5); }
+    h1 { font-size: clamp(2rem, 5vw, 3.2rem); font-weight: 800; letter-spacing: -.04em; line-height: 1.05; margin-bottom: 16px; }
+    .hero-desc { font-size: 1.1rem; color: rgba(24,24,27,.55); max-width: 560px; margin-bottom: 28px; line-height: 1.6; }
+    .hero-links { display: flex; gap: 12px; flex-wrap: wrap; }
+    .btn-primary { display: inline-flex; align-items: center; gap: 8px; padding: 12px 22px; background: var(--encre); color: var(--fond); border-radius: 999px; font-weight: 700; font-size: .88rem; }
+    .btn-primary:hover { opacity: .8; text-decoration: none; }
+    .btn-ghost { display: inline-flex; align-items: center; gap: 8px; padding: 12px 22px; border: 2px solid rgba(24,24,27,.15); color: var(--encre); border-radius: 999px; font-weight: 700; font-size: .88rem; }
+    .btn-ghost:hover { border-color: rgba(24,24,27,.4); text-decoration: none; }
+    .screenshot { max-width: 780px; margin: 0 auto 80px; padding: 0 24px; }
+    .screenshot img { width: 100%; border-radius: 24px; border: 1px solid rgba(24,24,27,.08); box-shadow: 0 24px 80px rgba(24,24,27,.12); }
+    .content { max-width: 780px; margin: 0 auto; padding: 0 24px 80px; }
+    .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 16px; margin-bottom: 64px; }
+    .stat { background: white; border-radius: 20px; padding: 24px; border: 1px solid rgba(24,24,27,.07); }
+    .stat-value { font-size: 2.2rem; font-weight: 800; letter-spacing: -.04em; color: var(--encre); line-height: 1; margin-bottom: 6px; }
+    .stat-value.green { color: var(--vert); }
+    .stat-label { font-size: .75rem; font-weight: 600; color: rgba(24,24,27,.4); text-transform: uppercase; letter-spacing: .06em; }
+    .section { margin-bottom: 56px; }
+    .section-label { font-size: .72rem; font-weight: 700; text-transform: uppercase; letter-spacing: .1em; color: var(--vert); margin-bottom: 12px; }
+    h2 { font-size: 1.5rem; font-weight: 800; letter-spacing: -.03em; margin-bottom: 16px; line-height: 1.2; }
+    p { color: rgba(24,24,27,.65); margin-bottom: 14px; }
+    p:last-child { margin-bottom: 0; }
+    .features { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; margin-top: 20px; }
+    .feature { background: white; border-radius: 16px; padding: 18px 20px; border: 1px solid rgba(24,24,27,.07); display: flex; align-items: flex-start; gap: 12px; }
+    .feature-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--vert); flex-shrink: 0; margin-top: 7px; box-shadow: 0 0 8px rgba(16,185,129,.5); }
+    .feature-text { font-size: .88rem; font-weight: 600; color: var(--encre); line-height: 1.4; }
+    .testimonial { background: var(--encre); border-radius: 24px; padding: 40px; margin: 56px 0; }
+    .quote { font-size: 1.2rem; font-weight: 700; color: white; line-height: 1.55; margin-bottom: 20px; font-style: italic; }
+    .quote::before { content: '\201C'; }
+    .quote::after { content: '\201D'; }
+    .author { display: flex; align-items: center; gap: 12px; }
+    .author-dot { width: 36px; height: 36px; border-radius: 50%; background: var(--vert); flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: .8rem; color: white; }
+    .author-name { font-weight: 700; color: white; font-size: .9rem; }
+    .author-role { font-size: .78rem; color: rgba(255,255,255,.4); font-weight: 500; }
+    .stack { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
+    .stack-item { padding: 6px 14px; background: rgba(24,24,27,.06); border-radius: 999px; font-size: .78rem; font-weight: 600; color: rgba(24,24,27,.6); }
+    .cta-box { background: white; border-radius: 24px; border: 1px solid rgba(24,24,27,.08); padding: 40px; text-align: center; margin-top: 64px; }
+    .cta-box h3 { font-size: 1.4rem; font-weight: 800; letter-spacing: -.03em; margin-bottom: 10px; }
+    .cta-box p { color: rgba(24,24,27,.5); margin-bottom: 24px; }
+    .sep { border: none; border-top: 1px solid rgba(24,24,27,.07); margin: 56px 0; }
+    .wip-banner { background: rgba(245,158,11,.08); border: 1px solid rgba(245,158,11,.2); border-radius: 16px; padding: 16px 20px; margin-bottom: 48px; display: flex; align-items: center; gap: 12px; }
+    .wip-banner p { color: #92400e; font-size: .88rem; font-weight: 600; margin: 0; }
+    footer { text-align: center; padding: 24px; font-size: .78rem; color: rgba(24,24,27,.3); font-weight: 600; border-top: 1px solid rgba(24,24,27,.07); }
+    @media (max-width: 600px) { .hero { padding-top: 100px; } h1 { font-size: 1.8rem; } .testimonial { padding: 28px; } .quote { font-size: 1rem; } }
+  </style>
+</head>
+<body>
+
+  <div class="nav-wrap">
+    <nav>
+      <a href="../" class="nav-logo">Esthor.</a>
+      <a href="../#portfolio" class="nav-back">← Retour au portfolio</a>
+      <a href="../#rdv" class="nav-cta">Projet similaire ?</a>
+    </nav>
+  </div>
+
+  <div class="hero">
+    <div class="tags">
+      <span class="tag tag-offre">Bureau Virtuel</span>
+      <span class="tag tag-wip">En construction</span>
+      <span class="tag tag-secteur">Tapisserie artisan</span>
+      <span class="tag tag-secteur">Occitanie</span>
+    </div>
+    <h1>Mathilde Gesta</h1>
+    <p class="hero-desc">
+      Une tapissière artisan qui gérait commandes et demandes par SMS. Aujourd'hui elle dispose d'un catalogue en ligne et d'un espace pour tout suivre depuis son atelier.
+    </p>
+    <div class="hero-links">
+      <a href="../#rdv" class="btn-primary">Un projet similaire ?</a>
+    </div>
+  </div>
+
+  <div class="screenshot">
+    <img src="../assets/mathilde.png" alt="Capture d'écran du site Mathilde Gesta" />
+  </div>
+
+  <div class="content">
+
+    <div class="wip-banner">
+      <p>🔧 Ce projet est en cours de finalisation — la mise en ligne est prévue prochainement.</p>
+    </div>
+
+    <div class="stats">
+      <div class="stat">
+        <div class="stat-value green">0</div>
+        <div class="stat-label">SMS pour gérer une commande</div>
+      </div>
+      <div class="stat">
+        <div class="stat-value">3h</div>
+        <div class="stat-label">Gagnées par semaine</div>
+      </div>
+      <div class="stat">
+        <div class="stat-value green">∞</div>
+        <div class="stat-label">Créations présentables 24h/24</div>
+      </div>
+      <div class="stat">
+        <div class="stat-value">~2500€</div>
+        <div class="stat-label">Investissement total</div>
+      </div>
+    </div>
+
+    <div class="section">
+      <p class="section-label">Le contexte</p>
+      <h2>Une artisan dont le travail méritait mieux qu'un fil de SMS</h2>
+      <p>Mathilde est tapissière artisan en Occitanie. Ses créations — sièges restaurés, pièces uniques sur-mesure — sont bluffantes. Le problème : elle les montrait sur son téléphone, gérait ses commandes par messages, et ses devis par email sans aucune traçabilité.</p>
+      <p>Son carnet de commandes tenait dans sa tête. Quand une cliente rappelait plusieurs semaines après pour des retouches, il fallait retrouver la conversation dans un historique de messages pour se rappeler ce qui avait été convenu.</p>
+    </div>
+
+    <hr class="sep" />
+
+    <div class="section">
+      <p class="section-label">Le problème</p>
+      <h2>Trop de temps perdu sur l'administratif, pas assez sur le métier</h2>
+      <p>Chaque semaine, Mathilde passait des heures à répondre aux mêmes questions : "Vous avez encore ce tissu ?", "Où en est ma commande ?", "Vous faites des tarifs pour les professionnels ?".</p>
+      <p>Sans catalogue en ligne, sans espace client, chaque échange recommençait à zéro. Et sans espace admin, vérifier l'état de ses commandes en cours nécessitait de fouiller dans ses emails.</p>
+    </div>
+
+    <hr class="sep" />
+
+    <div class="section">
+      <p class="section-label">La solution</p>
+      <h2>Un site vitrine doublé d'un outil de gestion</h2>
+      <p>Un site multi-pages pour présenter ses créations sous leur meilleur jour, avec un catalogue consultable en ligne. Et derrière, un espace admin complet pour qu'elle gère tout elle-même : nouvelles créations, commandes en cours, avis clients.</p>
+      <div class="features">
+        <div class="feature"><div class="feature-dot"></div><div class="feature-text">Catalogue de créations en ligne</div></div>
+        <div class="feature"><div class="feature-dot"></div><div class="feature-text">Gestion des commandes</div></div>
+        <div class="feature"><div class="feature-dot"></div><div class="feature-text">Espace avis clients</div></div>
+        <div class="feature"><div class="feature-dot"></div><div class="feature-text">Espace admin sécurisé</div></div>
+        <div class="feature"><div class="feature-dot"></div><div class="feature-text">Authentification Supabase</div></div>
+        <div class="feature"><div class="feature-dot"></div><div class="feature-text">Design sur-mesure à son image</div></div>
+      </div>
+    </div>
+
+    <div class="testimonial">
+      <p class="quote">Lors d'un salon, j'ai pu montrer toutes mes réalisations sur mon téléphone directement depuis le site. Une cliente a passé commande là, devant moi. Avant, j'aurais dû lui envoyer des photos une par une.</p>
+      <div class="author">
+        <div class="author-dot">M</div>
+        <div>
+          <div class="author-name">Mathilde</div>
+          <div class="author-role">Tapissière artisan · Occitanie</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <p class="section-label">Technique</p>
+      <h2>Une application moderne avec une vraie base de données</h2>
+      <p>L'espace admin est protégé par une authentification sécurisée. Toutes les données (commandes, créations, avis) sont stockées dans une base de données en ligne, accessible depuis n'importe quel appareil.</p>
+      <div class="stack">
+        <span class="stack-item">React</span>
+        <span class="stack-item">Vite</span>
+        <span class="stack-item">Tailwind CSS</span>
+        <span class="stack-item">Supabase</span>
+        <span class="stack-item">PostgreSQL</span>
+        <span class="stack-item">Authentification</span>
+      </div>
+    </div>
+
+    <div class="cta-box">
+      <h3>Vous êtes artisan ou commerçant ?</h3>
+      <p>Un catalogue en ligne bien présenté vaut mieux que 200 photos sur votre téléphone. Parlons de ce que je peux faire pour vous.</p>
+      <a href="../#rdv" class="btn-primary">Réserver un appel gratuit de 15 min</a>
+    </div>
+
+  </div>
+
+  <footer>© 2026 Esthor Solution — <a href="../">Retour au site</a></footer>
+</body>
+</html>
