@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Création site web à Niort — Esthor Solution</title>
+  <meta name="description" content="Développeur web indépendant basé à Niort. Sites vitrines ultra-rapides et logiciels de gestion PME sur-mesure pour les artisans et entreprises des Deux-Sèvres. Dès 800 €." />
+  <link rel="canonical" href="https://esthor-solution.fr/niort" />
+  <script defer data-domain="esthor-solution.fr" src="https://plausible.io/js/script.js"></script>
+  <style>
+    @font-face { font-family: 'Plus Jakarta Sans'; font-weight: 400; src: url('/fonts/PlusJakartaSans-Regular.ttf'); }
+    @font-face { font-family: 'Plus Jakarta Sans'; font-weight: 600; src: url('/fonts/PlusJakartaSans-SemiBold.ttf'); }
+    @font-face { font-family: 'Plus Jakarta Sans'; font-weight: 800; src: url('/fonts/PlusJakartaSans-ExtraBold.ttf'); }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Plus Jakarta Sans', sans-serif; background: #FDFBF7; color: #18181B; font-size: 16px; line-height: 1.7; }
+    a { color: #10B981; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    /* Nav */
+    nav { position: fixed; top: 20px; left: 50%; transform: translateX(-50%); z-index: 50; background: rgba(255,255,255,.75); backdrop-filter: blur(20px); border: 1px solid rgba(255,255,255,.95); box-shadow: 0 4px 24px rgba(24,24,27,.08); border-radius: 999px; padding: 10px 24px; display: flex; align-items: center; gap: 32px; }
+    .nav-logo { font-weight: 800; font-size: 1rem; color: #18181B; letter-spacing: -0.03em; }
+    .nav-links { display: flex; gap: 24px; }
+    .nav-links a { font-size: .85rem; font-weight: 600; color: rgba(24,24,27,.55); }
+    .nav-links a:hover { color: #18181B; text-decoration: none; }
+    .nav-cta { background: #18181B; color: #FDFBF7; padding: 8px 20px; border-radius: 999px; font-size: .85rem; font-weight: 700; }
+    .nav-cta:hover { background: rgba(24,24,27,.8); text-decoration: none; }
+
+    /* Hero */
+    .hero { padding: 140px 24px 80px; max-width: 800px; margin: 0 auto; text-align: center; }
+    .badge { display: inline-flex; align-items: center; gap: 8px; padding: 6px 16px; border-radius: 999px; background: rgba(255,255,255,.7); border: 1px solid rgba(24,24,27,.1); font-size: .8rem; font-weight: 700; color: rgba(24,24,27,.6); margin-bottom: 28px; }
+    .badge-dot { width: 8px; height: 8px; border-radius: 50%; background: #10B981; animation: pulse 2s infinite; }
+    @keyframes pulse { 0%,100%{opacity:1}50%{opacity:.5} }
+    h1 { font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 800; letter-spacing: -0.04em; line-height: 1.05; margin-bottom: 20px; }
+    h1 span { color: rgba(24,24,27,.3); }
+    .subtitle { font-size: 1.1rem; color: rgba(24,24,27,.55); max-width: 520px; margin: 0 auto 36px; }
+    .ctas { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+    .btn-primary { background: #10B981; color: white; padding: 14px 28px; border-radius: 999px; font-weight: 700; font-size: .95rem; }
+    .btn-primary:hover { opacity: .9; text-decoration: none; }
+    .btn-secondary { border: 2px solid rgba(24,24,27,.15); color: #18181B; padding: 14px 28px; border-radius: 999px; font-weight: 700; font-size: .95rem; }
+    .btn-secondary:hover { border-color: rgba(24,24,27,.4); text-decoration: none; }
+
+    /* Sections */
+    section { max-width: 800px; margin: 0 auto; padding: 64px 24px; }
+    h2 { font-size: 1.6rem; font-weight: 800; letter-spacing: -0.03em; margin-bottom: 16px; }
+    p { color: rgba(24,24,27,.65); margin-bottom: 16px; }
+    .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; margin-top: 28px; }
+    .card { background: white; border-radius: 20px; padding: 24px; border: 1px solid rgba(24,24,27,.07); }
+    .card-title { font-weight: 800; font-size: .95rem; margin-bottom: 8px; }
+    .card-text { font-size: .85rem; color: rgba(24,24,27,.55); margin: 0; }
+    .card-price { font-size: 1.4rem; font-weight: 800; color: #18181B; margin: 12px 0 4px; }
+    .card-sub { font-size: .75rem; color: rgba(24,24,27,.4); font-weight: 600; margin: 0; }
+    .sep { border: none; border-top: 1px solid rgba(24,24,27,.07); }
+
+    /* Footer */
+    footer { text-align: center; padding: 32px 24px; font-size: .8rem; color: rgba(24,24,27,.35); font-weight: 600; border-top: 1px solid rgba(24,24,27,.07); }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <span class="nav-logo">Esthor.</span>
+    <div class="nav-links">
+      <a href="/#offres">Offres</a>
+      <a href="/#portfolio">Réalisations</a>
+    </div>
+    <a href="/#rdv" class="nav-cta">Discuter</a>
+  </nav>
+
+  <div class="hero">
+    <div class="badge">
+      <span class="badge-dot"></span>
+      Développeur web à Niort — Deux-Sèvres
+    </div>
+    <h1>Votre site web à Niort, <span>fait par quelqu'un du coin.</span></h1>
+    <p class="subtitle">
+      Artisan du web installé dans les Deux-Sèvres. Je crée des sites vitrines qui attirent des clients locaux et des outils de gestion qui vous font gagner du temps.
+    </p>
+    <div class="ctas">
+      <a href="/#rdv" class="btn-primary">Réserver un appel gratuit</a>
+      <a href="/#offres" class="btn-secondary">Voir les offres</a>
+    </div>
+  </div>
+
+  <hr class="sep" />
+
+  <section>
+    <h2>Pourquoi travailler avec un développeur basé à Niort ?</h2>
+    <p>
+      Niort est une ville qui bouge. Entre les mutuelles et assurances qui emploient des milliers de personnes, les artisans du bâtiment qui se développent dans le bassin, et les commerces du centre-ville qui cherchent à attirer de nouveaux clients — la demande en outils numériques simples et efficaces n'a jamais été aussi forte.
+    </p>
+    <p>
+      Contrairement à une agence web lointaine joignable uniquement par email, je suis disponible en fin de journée et le week-end, et je peux me déplacer si besoin. Pas de ticket support, pas d'attente : vous m'appelez, je réponds.
+    </p>
+    <p>
+      Je travaille avec des artisans, des gérants de PME et des indépendants des Deux-Sèvres qui en ont assez de payer des abonnements pour des outils qu'ils utilisent à 10 %. Mon but : vous donner un outil qui fonctionne vraiment pour votre activité.
+    </p>
+  </section>
+
+  <hr class="sep" />
+
+  <section>
+    <h2>Mes prestations pour les entreprises de Niort</h2>
+    <div class="cards">
+      <div class="card">
+        <p class="card-title">Site vitrine</p>
+        <p class="card-text">Votre entreprise visible sur Google, avec un design soigné et un formulaire de contact. Vos futurs clients vous trouvent avant la concurrence.</p>
+        <p class="card-price">Dès 800 €</p>
+        <p class="card-sub">Paiement unique · Zéro abonnement</p>
+      </div>
+      <div class="card">
+        <p class="card-title">Bureau Virtuel</p>
+        <p class="card-text">Site vitrine + gestion de vos rendez-vous, devis, factures et clients depuis un seul endroit. Fini les tableaux Excel et les outils qui ne se parlent pas.</p>
+        <p class="card-price">Dès 3 500 €</p>
+        <p class="card-sub">puis 89 €/mois · Maintenance incluse</p>
+      </div>
+    </div>
+  </section>
+
+  <hr class="sep" />
+
+  <section style="text-align:center">
+    <h2>Un échange de 15 minutes, gratuit</h2>
+    <p style="max-width:480px;margin:0 auto 28px;">
+      Vous me décrivez votre activité et ce qui vous prend du temps. Je vous dis honnêtement ce que je peux faire pour vous — et ce que je ne peux pas.
+    </p>
+    <a href="/#rdv" class="btn-primary">Choisir un créneau</a>
+  </section>
+
+  <footer>
+    © 2026 Esthor Solution — Paul Esthor · Niort (79000) ·
+    <a href="/">Accueil</a> ·
+    <a href="/mentions-legales.html">Mentions légales</a> ·
+    <a href="/cgv.html">CGV</a>
+  </footer>
+
+</body>
+</html>

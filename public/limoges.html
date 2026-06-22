@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Création site web à Limoges — Esthor Solution</title>
+  <meta name="description" content="Développeur web freelance pour les artisans et PME de Limoges et de la Haute-Vienne. Sites vitrines professionnels et logiciels de gestion sur-mesure. Dès 800 €." />
+  <link rel="canonical" href="https://esthor-solution.fr/limoges" />
+  <script defer data-domain="esthor-solution.fr" src="https://plausible.io/js/script.js"></script>
+  <style>
+    @font-face { font-family: 'Plus Jakarta Sans'; font-weight: 400; src: url('/fonts/PlusJakartaSans-Regular.ttf'); }
+    @font-face { font-family: 'Plus Jakarta Sans'; font-weight: 600; src: url('/fonts/PlusJakartaSans-SemiBold.ttf'); }
+    @font-face { font-family: 'Plus Jakarta Sans'; font-weight: 800; src: url('/fonts/PlusJakartaSans-ExtraBold.ttf'); }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Plus Jakarta Sans', sans-serif; background: #FDFBF7; color: #18181B; font-size: 16px; line-height: 1.7; }
+    a { color: #10B981; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    nav { position: fixed; top: 20px; left: 50%; transform: translateX(-50%); z-index: 50; background: rgba(255,255,255,.75); backdrop-filter: blur(20px); border: 1px solid rgba(255,255,255,.95); box-shadow: 0 4px 24px rgba(24,24,27,.08); border-radius: 999px; padding: 10px 24px; display: flex; align-items: center; gap: 32px; }
+    .nav-logo { font-weight: 800; font-size: 1rem; color: #18181B; letter-spacing: -0.03em; }
+    .nav-links { display: flex; gap: 24px; }
+    .nav-links a { font-size: .85rem; font-weight: 600; color: rgba(24,24,27,.55); }
+    .nav-links a:hover { color: #18181B; text-decoration: none; }
+    .nav-cta { background: #18181B; color: #FDFBF7; padding: 8px 20px; border-radius: 999px; font-size: .85rem; font-weight: 700; }
+    .nav-cta:hover { background: rgba(24,24,27,.8); text-decoration: none; }
+    .hero { padding: 140px 24px 80px; max-width: 800px; margin: 0 auto; text-align: center; }
+    .badge { display: inline-flex; align-items: center; gap: 8px; padding: 6px 16px; border-radius: 999px; background: rgba(255,255,255,.7); border: 1px solid rgba(24,24,27,.1); font-size: .8rem; font-weight: 700; color: rgba(24,24,27,.6); margin-bottom: 28px; }
+    .badge-dot { width: 8px; height: 8px; border-radius: 50%; background: #10B981; animation: pulse 2s infinite; }
+    @keyframes pulse { 0%,100%{opacity:1}50%{opacity:.5} }
+    h1 { font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 800; letter-spacing: -0.04em; line-height: 1.05; margin-bottom: 20px; }
+    h1 span { color: rgba(24,24,27,.3); }
+    .subtitle { font-size: 1.1rem; color: rgba(24,24,27,.55); max-width: 520px; margin: 0 auto 36px; }
+    .ctas { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+    .btn-primary { background: #10B981; color: white; padding: 14px 28px; border-radius: 999px; font-weight: 700; font-size: .95rem; }
+    .btn-primary:hover { opacity: .9; text-decoration: none; }
+    .btn-secondary { border: 2px solid rgba(24,24,27,.15); color: #18181B; padding: 14px 28px; border-radius: 999px; font-weight: 700; font-size: .95rem; }
+    .btn-secondary:hover { border-color: rgba(24,24,27,.4); text-decoration: none; }
+    section { max-width: 800px; margin: 0 auto; padding: 64px 24px; }
+    h2 { font-size: 1.6rem; font-weight: 800; letter-spacing: -0.03em; margin-bottom: 16px; }
+    p { color: rgba(24,24,27,.65); margin-bottom: 16px; }
+    .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; margin-top: 28px; }
+    .card { background: white; border-radius: 20px; padding: 24px; border: 1px solid rgba(24,24,27,.07); }
+    .card-title { font-weight: 800; font-size: .95rem; margin-bottom: 8px; }
+    .card-text { font-size: .85rem; color: rgba(24,24,27,.55); margin: 0; }
+    .card-price { font-size: 1.4rem; font-weight: 800; color: #18181B; margin: 12px 0 4px; }
+    .card-sub { font-size: .75rem; color: rgba(24,24,27,.4); font-weight: 600; margin: 0; }
+    .sep { border: none; border-top: 1px solid rgba(24,24,27,.07); }
+    footer { text-align: center; padding: 32px 24px; font-size: .8rem; color: rgba(24,24,27,.35); font-weight: 600; border-top: 1px solid rgba(24,24,27,.07); }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <span class="nav-logo">Esthor.</span>
+    <div class="nav-links">
+      <a href="/#offres">Offres</a>
+      <a href="/#portfolio">Réalisations</a>
+    </div>
+    <a href="/#rdv" class="nav-cta">Discuter</a>
+  </nav>
+
+  <div class="hero">
+    <div class="badge">
+      <span class="badge-dot"></span>
+      Développeur web — Limoges &amp; Haute-Vienne
+    </div>
+    <h1>Un site web pour votre entreprise à Limoges, <span>sans vous prendre la tête.</span></h1>
+    <p class="subtitle">
+      Je crée des sites professionnels et des outils de gestion sur-mesure pour les artisans, commerçants et indépendants de la Haute-Vienne.
+    </p>
+    <div class="ctas">
+      <a href="/#rdv" class="btn-primary">Réserver un appel gratuit</a>
+      <a href="/#offres" class="btn-secondary">Voir les offres</a>
+    </div>
+  </div>
+
+  <hr class="sep" />
+
+  <section>
+    <h2>Les artisans de Limoges méritent des outils à la hauteur</h2>
+    <p>
+      Limoges, c'est une ville d'artisans et de savoir-faire. Porcelaine, travail du cuir, bâtiment, restauration — des centaines d'indépendants exercent leur métier avec passion, mais perdent trop de temps sur l'administratif et peinent à se rendre visibles en ligne.
+    </p>
+    <p>
+      Un client qui cherche un plombier, un tapissier ou un traiteur à Limoges commence par Google. Si votre entreprise n'apparaît pas, c'est un concurrent qui récupère le contrat. Un site bien construit règle ça — et contrairement à ce qu'on croit, ça ne coûte pas une fortune.
+    </p>
+    <p>
+      Je travaille à distance mais avec la même disponibilité qu'un prestataire local : appel direct, réponse le jour même, suivi personnalisé. Mes clients savent à qui ils parlent.
+    </p>
+  </section>
+
+  <hr class="sep" />
+
+  <section>
+    <h2>Ce que je peux faire pour vous</h2>
+    <div class="cards">
+      <div class="card">
+        <p class="card-title">Site vitrine</p>
+        <p class="card-text">Votre activité présentée clairement, un formulaire pour que les clients vous contactent, et une vraie visibilité sur Google Limoges.</p>
+        <p class="card-price">Dès 800 €</p>
+        <p class="card-sub">Paiement unique · Zéro abonnement</p>
+      </div>
+      <div class="card">
+        <p class="card-title">Bureau Virtuel</p>
+        <p class="card-text">Vos rendez-vous, devis, factures et clients gérés depuis un seul écran. Vous gagnez les heures perdues chaque semaine sur l'administratif.</p>
+        <p class="card-price">Dès 3 500 €</p>
+        <p class="card-sub">puis 89 €/mois · Maintenance incluse</p>
+      </div>
+    </div>
+  </section>
+
+  <hr class="sep" />
+
+  <section style="text-align:center">
+    <h2>15 minutes pour voir si on peut travailler ensemble</h2>
+    <p style="max-width:480px;margin:0 auto 28px;">
+      Je vous écoute, je regarde ce dont vous avez besoin, et je vous réponds honnêtement. Pas de présentation commerciale, pas d'engagement.
+    </p>
+    <a href="/#rdv" class="btn-primary">Choisir un créneau</a>
+  </section>
+
+  <footer>
+    © 2026 Esthor Solution — Paul Esthor · Limoges & Niort ·
+    <a href="/">Accueil</a> ·
+    <a href="/mentions-legales.html">Mentions légales</a> ·
+    <a href="/cgv.html">CGV</a>
+  </footer>
+
+</body>
+</html>

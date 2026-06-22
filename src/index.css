@@ -1,0 +1,116 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ── Polices auto-hébergées (RGPD compliant) ── */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/fonts/PlusJakartaSans-Regular.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url('/fonts/PlusJakartaSans-Medium.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url('/fonts/PlusJakartaSans-SemiBold.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('/fonts/PlusJakartaSans-Bold.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url('/fonts/PlusJakartaSans-ExtraBold.ttf') format('truetype');
+}
+
+/* ── Reset & base ── */
+@layer base {
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-fond text-encre font-sans antialiased;
+    font-size: 17px;
+    line-height: 1.6;
+  }
+
+  h1, h2, h3, h4 {
+    @apply font-extrabold tracking-tight text-encre;
+    letter-spacing: -0.03em;
+  }
+}
+
+/* ── Utilitaires glassmorphisme ── */
+@layer utilities {
+  .glass {
+    background: rgba(255, 255, 255, 0.75);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.95);
+    box-shadow: 0 4px 24px rgba(24, 24, 27, 0.08);
+  }
+
+  .glass-dark {
+    background: rgba(24, 24, 27, 0.6);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .section-padding {
+    @apply px-6 py-24 md:px-12 lg:px-24;
+  }
+
+  .container-site {
+    @apply max-w-6xl mx-auto w-full;
+  }
+}
+
+/* ── Animations logo SVG ── */
+@keyframes logo-slide {
+  0%,  10%  { transform: translateX(0);    opacity: 1; }
+  35%, 45%  { transform: translateX(12px); opacity: 0; }
+  70%, 100% { transform: translateX(0);    opacity: 1; }
+}
+
+@keyframes logo-pillar {
+  0%,  10%  { fill: #18181B; }
+  35%, 45%  { fill: #94A3B8; }
+  70%, 100% { fill: #18181B; }
+}
+
+/* ── Animation blob hero ── */
+@keyframes blob {
+  0%,  100% { transform: translate(0, 0)     scale(1);    }
+  33%        { transform: translate(30px, -20px) scale(1.08); }
+  66%        { transform: translate(-20px, 20px) scale(0.92); }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .logo-block-top { animation: logo-slide 5s ease-in-out infinite; }
+  .logo-block-mid { animation: logo-slide 5s ease-in-out infinite 0.3s; }
+  .logo-block-bot { animation: logo-slide 5s ease-in-out infinite 0.6s; }
+  .logo-pillar    { animation: logo-pillar 5s ease-in-out infinite; }
+  .animate-blob   { animation: blob 8s ease-in-out infinite; }
+}
