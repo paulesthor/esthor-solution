@@ -15,7 +15,7 @@ const PROJETS = [
   },
   {
     nom: "Mathilde Gesta",
-    categorie: "Tapissière artisan · Occitanie",
+    categorie: "Tapissière artisan · Région de Metz",
     description: "Mathilde gère son catalogue de créations et ses commandes clients depuis un espace personnel sécurisé — sans passer par email ou Excel.",
     img: `${import.meta.env.BASE_URL}assets/mathilde.png`,
     url: `${import.meta.env.BASE_URL}projets/mathilde-gesta.html`,

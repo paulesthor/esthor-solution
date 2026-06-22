@@ -39,7 +39,7 @@ export default function Manifeste() {
                 {/* Badge localisation */}
                 <div className="absolute -bottom-3 left-1/2 -translate-x-1/2 whitespace-nowrap flex items-center gap-1.5 px-3 py-1.5 bg-encre rounded-full border border-vert/20">
                   <MapPin size={11} className="text-vert" />
-                  <span className="text-xs font-bold text-fond/80">Basé en Occitanie</span>
+                  <span className="text-xs font-bold text-fond/80">Basé à Niort</span>
                 </div>
               </div>
             </div>

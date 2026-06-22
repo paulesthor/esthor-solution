@@ -30,7 +30,7 @@ export default function Footer() {
               <span className="text-xl font-extrabold text-fond tracking-tight">Esthor.</span>
             </a>
             <p className="text-sm text-fond/40 leading-relaxed mb-5">
-              Artisan du web basé en Occitanie. Sites vitrines ultra-rapides et logiciels de gestion PME sur-mesure.
+              Artisan du web basé à Niort. Sites vitrines ultra-rapides et logiciels de gestion PME sur-mesure pour les indépendants de Niort, Limoges et au-delà.
             </p>
             <p className="text-xs text-fond/20 font-medium">
               SIRET : XXX XXX XXX XXXXX
@@ -108,7 +108,7 @@ export default function Footer() {
         {/* Bas de footer */}
         <div className="border-t border-fond/8 pt-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-fond/20 font-medium">
           <p>© {new Date().getFullYear()} Esthor Solution — Paul Esthor. Tous droits réservés.</p>
-          <p>Fait avec soin en Occitanie.</p>
+          <p>Fait avec soin à Niort.</p>
         </div>
       </div>
     </footer>
