@@ -1,16 +1,23 @@
-import { Phone, Mail } from 'lucide-react'
+import { Phone, Mail, MapPin } from 'lucide-react'
+
+const BASE = import.meta.env.BASE_URL
 
 const OFFRES = [
   { label: "Site Vitrine (Offre Présence)", href: "#offres" },
-  { label: "Bureau Virtuel (SaaS PME)", href: "#bureau-virtuel" },
+  { label: "Bureau Virtuel (Logiciel PME)", href: "#bureau-virtuel" },
   { label: "Comment ça marche", href: "#bureau-virtuel" },
-  { label: "Tester la démo", href: "#bac-a-sable" },
+  { label: "Voir la démo", href: "#bac-a-sable" },
+]
+
+const ZONES = [
+  { label: "Développeur web à Niort", href: `${BASE}niort.html` },
+  { label: "Développeur web à Limoges", href: `${BASE}limoges.html` },
 ]
 
 const LEGAL = [
-  { label: "Mentions légales", href: "/mentions-legales" },
-  { label: "Politique de confidentialité", href: "/politique-confidentialite" },
-  { label: "CGV", href: "/cgv" },
+  { label: "Mentions légales", href: `${BASE}mentions-legales.html` },
+  { label: "Confidentialité", href: `${BASE}politique-confidentialite.html` },
+  { label: "CGV", href: `${BASE}cgv.html` },
 ]
 
 export default function Footer() {
@@ -19,7 +26,7 @@ export default function Footer() {
       <div className="container-site px-6 lg:px-24">
 
         {/* Grille principale */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-10 mb-14">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-10 mb-10">
 
           {/* Colonne logo */}
           <div className="lg:col-span-1">
@@ -29,24 +36,33 @@ export default function Footer() {
               </span>
               <span className="text-xl font-extrabold text-fond tracking-tight">Esthor.</span>
             </a>
-            <p className="text-sm text-fond/40 leading-relaxed mb-5">
-              Artisan du web basé à Niort. Sites vitrines ultra-rapides et logiciels de gestion PME sur-mesure pour les indépendants de Niort, Limoges et au-delà.
+            <p className="text-sm text-fond/40 leading-relaxed mb-4">
+              Artisan du web basé à Niort. Sites vitrines ultra-rapides et logiciels de gestion PME sur-mesure pour les indépendants de Niort, Limoges et partout en France.
             </p>
-            <p className="text-xs text-fond/20 font-medium">
-              SIRET : en cours d'immatriculation
-            </p>
+            <div className="flex items-center gap-1.5">
+              <MapPin size={11} className="text-fond/20 shrink-0" />
+              <p className="text-xs text-fond/20 font-medium">Niort (79000) · Deux-Sèvres</p>
+            </div>
           </div>
 
           {/* Offres */}
           <div>
-            <p className="text-xs font-bold uppercase tracking-widest text-fond/30 mb-5">Offres</p>
+            <p className="text-xs font-bold uppercase tracking-widest text-fond/30 mb-5">Prestations</p>
             <ul className="flex flex-col gap-3">
               {OFFRES.map(l => (
                 <li key={l.label}>
-                  <a
-                    href={l.href}
-                    className="text-sm text-fond/50 hover:text-fond transition-colors duration-200 cursor-pointer font-medium"
-                  >
+                  <a href={l.href} className="text-sm text-fond/50 hover:text-fond transition-colors duration-200 cursor-pointer font-medium">
+                    {l.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+            {/* Zones SEO */}
+            <p className="text-xs font-bold uppercase tracking-widest text-fond/30 mt-6 mb-3">Zones</p>
+            <ul className="flex flex-col gap-2">
+              {ZONES.map(l => (
+                <li key={l.label}>
+                  <a href={l.href} className="text-xs text-fond/40 hover:text-fond transition-colors duration-200 cursor-pointer font-medium">
                     {l.label}
                   </a>
                 </li>
@@ -60,15 +76,13 @@ export default function Footer() {
             <ul className="flex flex-col gap-3">
               {LEGAL.map(l => (
                 <li key={l.label}>
-                  <a
-                    href={l.href}
-                    className="text-sm text-fond/50 hover:text-fond transition-colors duration-200 cursor-pointer font-medium"
-                  >
+                  <a href={l.href} className="text-sm text-fond/50 hover:text-fond transition-colors duration-200 cursor-pointer font-medium">
                     {l.label}
                   </a>
                 </li>
               ))}
             </ul>
+            <p className="text-xs text-fond/20 font-medium mt-6">SIRET : en cours d'immatriculation</p>
           </div>
 
           {/* Contact */}
@@ -76,28 +90,19 @@ export default function Footer() {
             <p className="text-xs font-bold uppercase tracking-widest text-fond/30 mb-5">Contact</p>
             <ul className="flex flex-col gap-4">
               <li>
-                <a
-                  href="tel:+33674903653"
-                  className="flex items-center gap-2.5 text-sm text-fond/50 hover:text-fond transition-colors duration-200 cursor-pointer font-medium"
-                >
+                <a href="tel:+33674903653" className="flex items-center gap-2.5 text-sm text-fond/50 hover:text-fond transition-colors duration-200 cursor-pointer font-medium">
                   <Phone size={13} className="shrink-0" />
                   06 74 90 36 53
                 </a>
               </li>
               <li>
-                <a
-                  href="mailto:contact@esthor-solution.fr"
-                  className="flex items-center gap-2.5 text-sm text-fond/50 hover:text-fond transition-colors duration-200 cursor-pointer font-medium"
-                >
+                <a href="mailto:contact@esthor-solution.fr" className="flex items-center gap-2.5 text-sm text-fond/50 hover:text-fond transition-colors duration-200 cursor-pointer font-medium">
                   <Mail size={13} className="shrink-0" />
                   contact@esthor-solution.fr
                 </a>
               </li>
               <li className="pt-2">
-                <a
-                  href="#rdv"
-                  className="inline-flex items-center px-4 py-2.5 bg-vert text-white text-xs font-bold rounded-xl hover:opacity-90 transition-opacity cursor-pointer"
-                >
+                <a href="#rdv" className="inline-flex items-center px-4 py-2.5 bg-vert text-white text-xs font-bold rounded-xl hover:opacity-90 transition-opacity cursor-pointer">
                   Réserver un appel gratuit
                 </a>
               </li>

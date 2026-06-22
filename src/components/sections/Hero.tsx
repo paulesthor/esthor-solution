@@ -1,5 +1,5 @@
 import { motion, useReducedMotion } from 'framer-motion'
-import { ArrowRight, FileText, Calendar, BarChart2, CheckCircle2, TrendingUp } from 'lucide-react'
+import { ArrowRight, FileText, Calendar, BarChart2, CheckCircle2, TrendingUp, Phone } from 'lucide-react'
 
 /* ── Cartes flottantes ── */
 function CardFacture() {
@@ -143,6 +143,15 @@ export default function Hero() {
               >
                 J'ai besoin d'un site vitrine
               </a>
+            </motion.div>
+
+            {/* Téléphone */}
+            <motion.div variants={item(reduced)} className="flex items-center justify-center lg:justify-start gap-2 mt-2">
+              <Phone size={13} className="text-encre/30" />
+              <a href="tel:+33674903653" className="text-sm font-medium text-encre/40 hover:text-encre transition-colors duration-200">
+                06 74 90 36 53
+              </a>
+              <span className="text-encre/20 text-sm">· Réponse sous 24h</span>
             </motion.div>
           </motion.div>
 
